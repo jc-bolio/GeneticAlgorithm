@@ -54,9 +54,9 @@ def crossover(indiv1, indiv2):
 
     # Crear hijos
     # np.hstack para juntar los arreglos
-    offspring1 = np.hstack((indiv1[0:crossoverPoint], indiv2[crossoverPoint:]))
+    offspring1 = np.append((indiv1[0:crossoverPoint], indiv2[crossoverPoint:]))
 
-    offspring2 = np.hstack((indiv2[0:crossoverPoint], indiv1[crossoverPoint:]))
+    offspring2 = np.append((indiv2[0:crossoverPoint], indiv1[crossoverPoint:]))
 
     # Regresar hijos
     return offspring1, offspring2
