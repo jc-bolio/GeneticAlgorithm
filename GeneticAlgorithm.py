@@ -74,8 +74,8 @@ def mutate(population, probability):
 # MAIN
 # Variables generales
 individualSize = 12
-populationSize = 5
-maxGeneration = 5
+populationSize = 20
+maxGeneration = 20
 
 # Crea población inical
 population = createPopulation(populationSize, individualSize)
