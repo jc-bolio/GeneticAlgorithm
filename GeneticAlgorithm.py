@@ -80,7 +80,7 @@ def mutate(population, probability):
 # Variables generales
 individualSize = 12
 populationSize = 5
-maxGeneration = 10
+maxGeneration = 2
 
 # Crea población inical
 population = createPopulation(populationSize, individualSize)
@@ -107,4 +107,4 @@ for generation in range(maxGeneration):
     fitness = calcFitness(population)
 
 # Fin :3
-print (fitness)
+print(fitness)
