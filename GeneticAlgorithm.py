@@ -17,9 +17,11 @@ def createPopulation(populationSize, individualSize):
 
 def calcFitness(population):
     # Separar arreglo
-
+    fitness = population.sum(axis=1)
+    print(fitness)
     # Hacer función para evaluar
 
+    # Regresar fitness
     return fitness
 
 
@@ -54,9 +56,9 @@ def crossover(indiv1, indiv2):
 
     # Crear hijos
     # np.hstack para juntar los arreglos
-    offspring1 = np.append((indiv1[0:crossoverPoint], indiv2[crossoverPoint:]))
+    offspring1 = np.append(indiv1[0:crossoverPoint], indiv2[crossoverPoint:])
 
-    offspring2 = np.append((indiv2[0:crossoverPoint], indiv1[crossoverPoint:]))
+    offspring2 = np.append(indiv2[0:crossoverPoint], indiv1[crossoverPoint:])
 
     # Regresar hijos
     return offspring1, offspring2
@@ -64,13 +66,6 @@ def crossover(indiv1, indiv2):
 
 def mutate(population, probability):
     # Aplicar mutación random
-    mutationArray = np.random.random(size=(population.shape))
-
-    mutationBoolean = \
-        mutationArray <= probability
-
-    population[mutationBoolean] = \
-        np.logical_not(population[mutationBoolean])
 
     # Regresar población mutada
     return population
@@ -80,7 +75,7 @@ def mutate(population, probability):
 # Variables generales
 individualSize = 12
 populationSize = 5
-maxGeneration = 2
+maxGeneration = 5
 
 # Crea población inical
 population = createPopulation(populationSize, individualSize)
@@ -107,4 +102,4 @@ for generation in range(maxGeneration):
     fitness = calcFitness(population)
 
 # Fin :3
-print(fitness)
+print(population)
