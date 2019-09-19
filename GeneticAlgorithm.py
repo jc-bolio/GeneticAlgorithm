@@ -17,10 +17,10 @@ def createPopulation(populationSize, individualSize):
 
 def calcFitness(population):
     # Separar arreglo
+
+    # Hacer función para evaluar
     fitness = population.sum(axis=1)
     print(fitness)
-    # Hacer función para evaluar
-
     # Regresar fitness
     return fitness
 
